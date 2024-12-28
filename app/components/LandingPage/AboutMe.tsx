@@ -2,7 +2,10 @@ import Image from 'next/image'
 
 const AboutMe = () => {
   return (
-    <div className='bg-foreground h-[32rem] flex flex-row items-center justify-center text-white'>
+    <section
+      id='about'
+      className='bg-foreground h-[32rem] flex flex-row items-center justify-center text-white'
+    >
       <div className='w-4/12'>
         <p className='text-primary font-grotesk text-2xl'>
           Apasionada por convertir ideas en realidad a través del código. Me
@@ -22,7 +25,7 @@ const AboutMe = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

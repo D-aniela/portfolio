@@ -1,5 +1,4 @@
 // pages/index.js
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -19,7 +18,7 @@ export default function MyProjects() {
   ]
 
   return (
-    <div className='bg-background text-white'>
+    <section id='myprojects' className='bg-background text-white'>
       <main className='container mx-auto p-8'>
         <h1 className='text-4xl text-center mb-8 font-fiolaregular'>
           My <span className='text-yellow-400 font-fiolaregular'>Projects</span>
@@ -51,6 +50,6 @@ export default function MyProjects() {
           ))}
         </div>
       </main>
-    </div>
+    </section>
   )
 }
