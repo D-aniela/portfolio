@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import AboutMe from './components/LandingPage/AboutMe'
+import Header from './components/LandingPage/Header'
+import MyProjects from './components/LandingPage/MyProjects'
 
 export default function Home() {
   return (
-    <div className='bg-blue-600 min-h-screen flex flex-col items-center justify-center text-white'>
-      <p>BUENAS</p>
-    </div>
+    <>
+      <Header />
+      <AboutMe />
+      <MyProjects />
+    </>
   )
 }
