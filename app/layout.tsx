@@ -3,6 +3,7 @@ import { getInitialLang } from './../getInitialLang'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer'
 import './globals.css'
+import { Providers } from './providers'
 
 export default async function RootLayout({
   children,
@@ -12,10 +13,12 @@ export default async function RootLayout({
   const initialLang = await getInitialLang()
 
   return (
-    <I18nProvider initialLang={initialLang}>
-      <Navbar />
-      {children}
-      <Footer />
-    </I18nProvider>
+    <Providers>
+      <I18nProvider initialLang={initialLang}>
+        <Navbar />
+        {children}
+        <Footer />
+      </I18nProvider>
+    </Providers>
   )
 }

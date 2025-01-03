@@ -1,10 +1,13 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
+  const { t } = useTranslation()
+
   return (
     <div className='bg-background h-[32rem] flex flex-row items-center justify-center text-white'>
       <div>
-        <h1 className='font-grotesk text-2xl mb-4'>Mi nombre es</h1>
+        <h1 className='font-grotesk text-2xl mb-4'>{t('name')}</h1>
         <p className='text-secondary font-fiolaregular text-7xl'>Daniela</p>
       </div>
       <div className='image-container'>
@@ -17,8 +20,10 @@ const Header = () => {
         />
       </div>
       <div>
-        <h1 className='font-grotesk text-2xl mb-4'>Soy desarrolladora</h1>
-        <p className='text-secondary font-fiolaregular text-7xl'>Full Stack</p>
+        <h1 className='font-grotesk text-2xl mb-4'>{t('i am a')}</h1>
+        <p className='text-secondary font-fiolaregular text-7xl'>
+          {t('developer')}
+        </p>
       </div>
     </div>
   )

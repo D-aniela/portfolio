@@ -1,8 +1,10 @@
 // pages/index.js
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 
 export default function MyProjects() {
+  const { t } = useTranslation()
   const works = [
     {
       title: 'CROWNEO',
@@ -18,10 +20,13 @@ export default function MyProjects() {
   ]
 
   return (
-    <section id='myprojects' className='bg-background text-white'>
+    <section id='projects' className='bg-background text-white'>
       <main className='container mx-auto p-8'>
         <h1 className='text-4xl text-center mb-8 font-fiolaregular'>
-          My <span className='text-yellow-400 font-fiolaregular'>Projects</span>
+          {t('my')}{' '}
+          <span className='text-yellow-400 font-fiolaregular'>
+            {t('projects')}
+          </span>
         </h1>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {works.map((work, index) => (

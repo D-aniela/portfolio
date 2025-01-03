@@ -1,4 +1,9 @@
 {
-    "welcome": "Welcome to my website!",
-    "description": "This is a sample description."
-  }
+  "name": "My name is",
+  "aboutMe": "Passionate about bringing ideas to life through code. I love crafting solutions that blend functionality and design seamlessly. When I'm not coding, you'll find me staying active—working out or diving into new ways to learn and grow.",
+  "my": "My",
+  "projects": "Projects",
+  "about": "About Me",
+  "i am a": "I am a full stack",
+  "developer": "developer"
+}

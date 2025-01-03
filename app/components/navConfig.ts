@@ -5,7 +5,7 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
   { href: 'about', label: 'Sobre Mi' },
-  { href: 'myprojects', label: 'Proyectos' },
+  { href: 'projects', label: 'Proyectos' },
 ]
 
 export default navLinks

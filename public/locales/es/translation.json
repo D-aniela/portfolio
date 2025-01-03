@@ -1,4 +1,9 @@
 {
-    "welcome": "¡Bienvenido a mi sitio web!",
-    "description": "Esta es una descripción de ejemplo."
+  "name": "Mi nombre es",
+  "aboutMe": "Apasionada por convertir ideas en realidad a través del código. Me encanta crear soluciones que combinen funcionalidad y diseño. Cuando no estoy programando, disfruto mantenerme activa, ya sea haciendo ejercicio o explorando nuevas formas de aprender y crecer.",
+  "my": "Mis",
+  "projects": "Proyectos",
+  "about": "Sobre Mí",
+  "i am a": "Soy desarrolladora",
+  "developer": "Full Stack"
   }
