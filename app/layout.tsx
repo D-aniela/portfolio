@@ -1,38 +1,21 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import { I18nProvider } from './I18nProvider'
+import { getInitialLang } from './../getInitialLang'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer'
+import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
-
-export const metadata: Metadata = {
-  title: 'Daniela Estrada',
-  description: 'Full Stack Developer',
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+  const initialLang = await getInitialLang()
+
   return (
-    <html lang='en' className='scroll-behavior-smooth'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <I18nProvider initialLang={initialLang}>
+      <Navbar />
+      {children}
+      <Footer />
+    </I18nProvider>
   )
 }
