@@ -22,7 +22,6 @@ export const LanguageProvider: FC<PropsWithChildren> = ({ children }) => {
   // }
 
   const changeLanguage = (lang: 'en' | 'es') => {
-    console.log('Changing language to:', lang)
     Cookies.set('NEXT_LOCALE', lang) // Guarda el idioma en cookies
     i18n.changeLanguage(lang) // Cambia el idioma en i18next
     dispatch({ type: 'Language - ChangeLanguage', payload: lang }) // Actualiza el estado

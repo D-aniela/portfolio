@@ -16,6 +16,7 @@ export default {
       colors: {
         background: '#3B7BA0',
         foreground: '#384955',
+        graybg: '#D9D9D9',
         primary: '#E6F4F1',
         secondary: '#EA9A27',
       },
