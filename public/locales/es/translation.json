@@ -5,5 +5,50 @@
   "projects": "Proyectos",
   "about": "Sobre Mí",
   "i am a": "Soy desarrolladora",
-  "developer": "Full Stack"
-  }
+  "developer": "Full Stack",
+  "experience": [
+    {
+      "period": "ABR 2021 - FEB 2024",
+      "title": "Full Stack Developer - SOFTTEK",
+      "description": "Experiencia en el diseño y desarrollo de componentes funcionales utilizando React, Node.js y MongoDB, con experiencia en lógica del lado del servidor utilizando Node.js, Express y middleware para manejar solicitudes HTTP. Habilidad para gestionar almacenamiento de datos con MongoDB, empleando Mongoose para manejar solicitudes y desarrollando servicios y controladores para abordar lógica de negocio compleja. Entregó exitosamente proyectos como Agenda2030, Reportes Pro-Bono (2020 & 2021), Villas Asistencias y un Sistema de Administración de Donantes para Club Niños y Niñas. Experiencia en colaboración con clientes, traduciendo requerimientos en entregables, garantizando capas de seguridad para solicitudes al back-end y cumpliendo con plazos ajustados. Experiencia adicional incluye la dockerización de aplicaciones, trabajo con Nest.js, TypeScript, Azure y SQL Server para construir soluciones escalables y seguras.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Mongoose",
+        "Nest.js",
+        "TypeScript",
+        "Azure",
+        "SQL Server",
+        "Docker",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "period": "OCT 2022 - APR 2023",
+      "title": "Desarrollador Web - CROWNEO",
+      "description": "Gestioné el mantenimiento de páginas para optimizar el rendimiento y la experiencia del usuario, brindando un servicio al cliente excepcional al abordar necesidades únicas con soluciones innovadoras. Competente en herramientas como Zeplin, HTML, CSS, React.js y Firebase, aprovechándolas para agilizar los procesos de desarrollo y mejorar la eficiencia.",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Firebase"
+      ]
+    },
+    {
+      "period": "MAR-JUL 2020",
+      "title": "Diseñador y Desarrollador Web - EVIEBLUE",
+      "description": "Diseñé y desarrollé un sitio web desde cero utilizando Angular y TypeScript. Responsable del diseño UI/UX, desarrollo front-end e integración back-end. Colaboré con el cliente para refinar los requerimientos del proyecto y garantizar que el sitio web cumpliera con sus necesidades.",
+      "technologies": [
+        "Angular",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  ]
+}

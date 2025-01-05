@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import AboutMe from './LandingPage/AboutMe'
+import ExperienceCard from './LandingPage/Experience'
 
 const AboutExperienceTabs = () => {
   const [activeTab, setActiveTab] = useState('about') // Estado para el botón activo
@@ -13,7 +14,7 @@ const AboutExperienceTabs = () => {
   return (
     <section
       id='about'
-      className='bg-foreground h-[32rem] flex flex-col items-center justify-start text-white'
+      className='bg-foreground h-[35rem] text-white flex flex-col'
     >
       <div className='flex flex-col items-center justify-center space-y-4 mt-10'>
         {/* Botones */}
@@ -53,17 +54,9 @@ const AboutExperienceTabs = () => {
         </div>
 
         {/* Contenido dinámico */}
-        <div className='mt-4 text-center'>
-          {activeTab === 'about' && (
-            <p className='text-gray-700'>
-              <AboutMe />
-            </p>
-          )}
-          {activeTab === 'experience' && (
-            <p className='text-gray-700'>
-              Experiencia trabajando en proyectos diversos que combinan...
-            </p>
-          )}
+        <div className='flex-grow w-full mt-4'>
+          {activeTab === 'about' && <AboutMe />}
+          {activeTab === 'experience' && <ExperienceCard />}
         </div>
       </div>
     </section>

@@ -5,5 +5,50 @@
   "projects": "Projects",
   "about": "About Me",
   "i am a": "I am a full stack",
-  "developer": "developer"
+  "developer": "developer",
+  "experience": [
+    {
+      "period": "APR 2021 - FEB 2024",
+      "title": "Web Developer - CROWNEO",
+      "description": "Proficient in designing and developing functional components using React, Node.js, and MongoDB, with expertise in server-side logic utilizing Node.js, Express, and middleware for handling HTTP requests. Skilled in managing data storage with MongoDB, employing Mongoose for request handling, and developing services and controllers to address complex business logic. Successfully delivered projects such as Agenda2030, Pro-Bono Reports (2020 & 2021), Villas Asistencias, and a Donors Administration System for Club Niños y Niñas. Experienced in client collaboration, translating requirements into deliverables, ensuring security layers for back-end requests, and meeting tight deadlines. Additional expertise includes Dockerizing applications, working with Nest.js, TypeScript, Azure, and SQL Server to build scalable, secure solutions.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "Mongoose",
+        "Nest.js",
+        "TypeScript",
+        "Azure",
+        "SQL Server",
+        "Docker",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    },
+    {
+      "period": "OCT 2022 - APR 2023",
+      "title": "Web Developer - CROWNEO",
+      "description": "Managed page maintenance to optimize performance and user experience while delivering exceptional customer service by addressing unique needs with innovative solutions. Proficient in tools like Zeplin, HTML, CSS, React.js, and Firebase, leveraging them to streamline development and enhance efficiency.",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Firebase"
+      ]
+    },
+    {
+      "period": "MAR-JUL 2020",
+      "title": "Web Designer and Developer - EVIEBLUE",
+      "description": "Designed and developed a website from scratch using Angular and TypeScript. Responsible for UI/UX design, front-end development, and back-end integration. Collaborated with the client to refine the project requirements and ensure that the website met their needs.",
+      "technologies": [
+        "Angular",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
+    }
+  ]
 }
