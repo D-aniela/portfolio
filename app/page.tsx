@@ -1,7 +1,7 @@
 'use client'
 
-import AboutExperienceTabs from './components/AboutExperienceTabs'
 import Header from './components/LandingPage/Header'
+import AboutExperienceTabs from './components/AboutExperienceTabs'
 import MyProjects from './components/LandingPage/MyProjects'
 
 export default function Home() {
