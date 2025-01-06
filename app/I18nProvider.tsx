@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import i18n from './i18n-init'
 
 export function I18nProvider({
@@ -10,16 +10,10 @@ export function I18nProvider({
   children: React.ReactNode
   initialLang: string
 }) {
-  const [currentLang, setCurrentLang] = useState(initialLang)
-
   useEffect(() => {
-    i18n.changeLanguage(currentLang) // Change initial language
-  }, [currentLang])
+    i18n.changeLanguage(initialLang) // Cambia el idioma en i18n
+    document.documentElement.lang = initialLang // Actualiza el atributo lang de <html>
+  }, [initialLang])
 
-  return (
-    <html lang={currentLang}>
-      <head />
-      <body>{children}</body>
-    </html>
-  )
+  return <>{children}</>
 }

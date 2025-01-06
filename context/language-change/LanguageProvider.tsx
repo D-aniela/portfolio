@@ -16,22 +16,23 @@ export const LanguageProvider: FC<PropsWithChildren> = ({ children }) => {
   const [state, dispatch] = useReducer(languageReducer, LANGUAGE_INITIAL_STATE)
   const { i18n } = useTranslation()
 
-  // const setLanguage = (lang: string) => {
-  //   console.log('Setting language to:', lang)
-  //   dispatch({ type: 'Language - SetLanguage', payload: lang })
-  // }
-
   const changeLanguage = (lang: 'en' | 'es') => {
-    Cookies.set('NEXT_LOCALE', lang) // Guarda el idioma en cookies
-    i18n.changeLanguage(lang) // Cambia el idioma en i18next
-    dispatch({ type: 'Language - ChangeLanguage', payload: lang }) // Actualiza el estado
+    if (i18n?.changeLanguage) {
+      Cookies.set('NEXT_LOCALE', lang) // Guarda el idioma en cookies
+      i18n.changeLanguage(lang) // Cambia el idioma en i18next
+      dispatch({ type: 'Language - ChangeLanguage', payload: lang }) // Actualiza el estado
+    } else {
+      console.error('i18n.changeLanguage is not available')
+    }
   }
 
   useEffect(() => {
     const savedLang = Cookies.get('NEXT_LOCALE') || 'en'
-    i18n.changeLanguage(savedLang)
-    dispatch({ type: 'Language - SetLanguage', payload: savedLang })
-  }, [])
+    if (i18n?.changeLanguage) {
+      i18n.changeLanguage(savedLang)
+      dispatch({ type: 'Language - SetLanguage', payload: savedLang })
+    }
+  }, [i18n])
 
   return (
     <LanguageContext.Provider

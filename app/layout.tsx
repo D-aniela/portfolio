@@ -19,12 +19,17 @@ export default async function RootLayout({
   const initialLang = await getInitialLang()
 
   return (
-    <Providers>
-      <I18nProvider initialLang={initialLang}>
-        <Navbar />
-        {children}
-        <Footer />
-      </I18nProvider>
-    </Providers>
+    <html lang={initialLang}>
+      <head />
+      <body>
+        <Providers>
+          <I18nProvider initialLang={initialLang}>
+            <Navbar />
+            {children}
+            <Footer />
+          </I18nProvider>
+        </Providers>
+      </body>
+    </html>
   )
 }

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     defaultLocale: 'en',
     localeDetection: false,
   },
+  reactStrictMode: true,
 }
 
 export default nextConfig
