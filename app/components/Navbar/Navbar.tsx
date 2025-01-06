@@ -4,7 +4,7 @@ import navLinks from '../navConfig'
 import MobileMenu from './MobileMenu'
 import Hamburger from './Hamburguer'
 import { LanguageContext } from '@/context/language-change'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'next-i18next'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)

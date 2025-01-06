@@ -7,9 +7,13 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
+    lng: 'en',
     debug: process.env.NODE_ENV === 'development',
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
+    react: {
+      useSuspense: false, // Importante para evitar problemas con SSR
     },
     interpolation: {
       escapeValue: false,

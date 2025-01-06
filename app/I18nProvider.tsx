@@ -13,11 +13,12 @@ export function I18nProvider({
   const [currentLang, setCurrentLang] = useState(initialLang)
 
   useEffect(() => {
-    i18n.changeLanguage(currentLang) // Cambia el idioma inicial
+    i18n.changeLanguage(currentLang) // Change initial language
   }, [currentLang])
 
   return (
     <html lang={currentLang}>
+      <head />
       <body>{children}</body>
     </html>
   )
