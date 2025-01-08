@@ -22,9 +22,15 @@ export default function MyProjects() {
   return (
     <section id='projects' className='bg-background text-white'>
       <main className='container mx-auto p-8'>
-        <h1 className='text-4xl text-center mb-8 font-fiolaregular'>
+        <h1
+          suppressHydrationWarning
+          className='text-4xl text-center mb-8 font-fiolaregular'
+        >
           {t('my')}{' '}
-          <span className='text-yellow-400 font-fiolaregular'>
+          <span
+            suppressHydrationWarning
+            className='text-yellow-400 font-fiolaregular'
+          >
             {t('projects')}
           </span>
         </h1>

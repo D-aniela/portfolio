@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <div className='bg-background h-[32rem] flex flex-row items-center justify-center text-white'>
       <div>
-        <h1 className='font-grotesk text-2xl mb-4'>{t('name')}</h1>
+        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-4'>
+          {t('name')}
+        </h1>
         <p className='text-secondary font-fiolaregular text-7xl'>Daniela</p>
       </div>
       <div className='image-container'>
@@ -20,8 +22,13 @@ const Header = () => {
         />
       </div>
       <div>
-        <h1 className='font-grotesk text-2xl mb-4'>{t('i am a')}</h1>
-        <p className='text-secondary font-fiolaregular text-7xl'>
+        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-4'>
+          {t('i am a')}
+        </h1>
+        <p
+          className='text-secondary font-fiolaregular text-7xl'
+          suppressHydrationWarning
+        >
           {t('developer')}
         </p>
       </div>

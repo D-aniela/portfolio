@@ -8,7 +8,10 @@ const AboutMe = () => {
     <>
       <div className='flex flex-row w-full justify-center mt-4'>
         <div className='w-4/12'>
-          <p className='text-primary text-left font-grotesk text-2xl'>
+          <p
+            suppressHydrationWarning
+            className='text-primary text-left font-grotesk text-2xl'
+          >
             {t('aboutMe')}
           </p>
         </div>

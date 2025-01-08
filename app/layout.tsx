@@ -1,4 +1,3 @@
-import { I18nProvider } from './I18nProvider'
 import { getInitialLang } from './../getInitialLang'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer'
@@ -22,12 +21,10 @@ export default async function RootLayout({
     <html lang={initialLang}>
       <head />
       <body>
-        <Providers>
-          <I18nProvider initialLang={initialLang}>
-            <Navbar />
-            {children}
-            <Footer />
-          </I18nProvider>
+        <Providers language={initialLang}>
+          <Navbar />
+          {children}
+          <Footer />
         </Providers>
       </body>
     </html>
