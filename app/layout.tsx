@@ -19,7 +19,9 @@ export default async function RootLayout({
 
   return (
     <html lang={initialLang}>
-      <head />
+      <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </head>
       <body>
         <Providers language={initialLang}>
           <Navbar />

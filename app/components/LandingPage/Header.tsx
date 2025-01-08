@@ -5,14 +5,19 @@ const Header = () => {
   const { t } = useTranslation()
 
   return (
-    <div className='bg-background h-[32rem] flex flex-row items-center justify-center text-white'>
-      <div>
-        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-4'>
+    <div className='bg-background h-[40rem] md:h-[32rem] flex flex-col md:flex-row items-center justify-center text-white'>
+      {/* Sección de "name" y "Daniela" */}
+      <div className='text-center md:text-left'>
+        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-2'>
           {t('name')}
         </h1>
-        <p className='text-secondary font-fiolaregular text-7xl'>Daniela</p>
+        <p className='text-secondary font-fiolaregular text-4xl md:text-7xl'>
+          Daniela
+        </p>
       </div>
-      <div className='image-container'>
+
+      {/* Imagen */}
+      <div className='image-container mb-4 md:mb-0 md:mx-8'>
         <Image
           src='/assets/memoji_daniela.png'
           width={291}
@@ -21,12 +26,14 @@ const Header = () => {
           className='animated-image'
         />
       </div>
-      <div>
-        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-4'>
+
+      {/* Sección de "I am a developer" */}
+      <div className='text-center md:text-left'>
+        <h1 suppressHydrationWarning className='font-grotesk text-2xl mb-2'>
           {t('i am a')}
         </h1>
         <p
-          className='text-secondary font-fiolaregular text-7xl'
+          className='text-secondary font-fiolaregular text-4xl md:text-7xl'
           suppressHydrationWarning
         >
           {t('developer')}
