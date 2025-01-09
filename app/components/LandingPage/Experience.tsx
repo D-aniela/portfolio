@@ -2,11 +2,21 @@ import { useTranslation } from 'next-i18next'
 
 const ExperienceCard = () => {
   const { t } = useTranslation()
-  const experience = t('experience', { returnObjects: true })
+  const experience: {
+    period: string
+    title: string
+    description: string
+    technologies: string[]
+  }[] = t('experience', { returnObjects: true }) as {
+    period: string
+    title: string
+    description: string
+    technologies: string[]
+  }[]
 
   return (
     <section
-      className='w-full pl-44 pr-44 max-h-96 overflow-y-auto'
+      className='w-full px-4 md:px-44 max-h-96 overflow-y-auto'
       style={{ scrollbarWidth: 'thin', scrollbarColor: '#A3A3A3 #1A1A1A' }} // Personaliza el scrollbar para navegadores compatibles
     >
       {experience.map(
@@ -19,10 +29,10 @@ const ExperienceCard = () => {
           },
           index: number
         ) => (
-          <div className='p-4 text-white flex' key={index}>
+          <div className='p-4 text-white flex flex-col md:flex-row' key={index}>
             <p
               suppressHydrationWarning
-              className='mr-24 whitespace-nowrap font-fiolaregular text-primary'
+              className='mb-2 md:mb-0 md:mr-24 whitespace-nowrap font-fiolaregular text-primary'
             >
               {item.period}
             </p>
@@ -39,7 +49,7 @@ const ExperienceCard = () => {
                   <button
                     suppressHydrationWarning
                     key={techIndex}
-                    className='m-1 bg-primary text-foreground rounded-3xl p-2 font-fiolaregular w-20 h-7 text-xs'
+                    className='m-1 bg-primary text-foreground rounded-3xl p-2 font-fiolaregular w-15 md:w-20 h-7 text-xs cursor-default'
                   >
                     {tech}
                   </button>
