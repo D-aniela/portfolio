@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { SVGLoader } from 'three/addons/loaders/SVGLoader.js'
+import { useIsMobile } from '../hooks/useMobile'
 
 interface Props {
   url: string
@@ -20,6 +21,8 @@ export default function SvgMeshStable({
   // visible = true,
   item,
 }: Props) {
+  const isMobile = useIsMobile(768)
+
   const groupRef = useRef<THREE.Group>(null!)
   const svgContainerRef = useRef<THREE.Group>(null!)
   const pupilsRef = useRef<THREE.Mesh[]>([])
@@ -131,7 +134,7 @@ export default function SvgMeshStable({
 
     // 🎯 escalado suave
     // const targetScale = visible ? 0.002 : 0
-    const targetScale = 0.002
+    const targetScale = isMobile ? 0.0014 : 0.002
     groupRef.current.scale.lerp(
       new THREE.Vector3(targetScale, targetScale, targetScale),
       0.05,
@@ -168,7 +171,7 @@ export default function SvgMeshStable({
     <group
       ref={groupRef}
       scale={[scale, scale, scale]}
-      position={position}
+      position={isMobile ? [0, -1.5, 0] : position}
       rotation={rotation}
     >
       <group ref={svgContainerRef} />

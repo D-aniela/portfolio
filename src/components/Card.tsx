@@ -1,19 +1,29 @@
-import type { ReactNode } from 'react'
+import type { ReactNode, CSSProperties } from 'react'
+import { useIsMobile } from '../hooks/useMobile'
 
 const Card = ({ children }: { children: ReactNode }) => {
-  return (
-    <div
-      style={{
+  const isMobile = useIsMobile(768)
+
+  const boxStyle: CSSProperties = isMobile
+    ? {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
+        width: '60vw',
+        height: '90vh',
+        marginLeft: '20%',
+        transform: 'translateX(-50%)',
+        position: 'relative',
+      }
+    : {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100vw',
         height: '100vh',
-      }}
-    >
-      {children}
-    </div>
-  )
+      }
+
+  return <div style={{ ...boxStyle }}>{children}</div>
 }
 
 export default Card

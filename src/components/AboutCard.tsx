@@ -1,13 +1,16 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react' // Nueva forma de importar
 import { useTranslation } from 'react-i18next'
+import { useIsMobile } from '../hooks/useMobile'
 
 import Card from './Card'
 import { techIcons } from '../utils/helpers'
 
 export default function AboutCard() {
   const { t } = useTranslation()
+  const isMobile = useIsMobile(768)
+
   return (
     <Card>
       <motion.div
@@ -20,11 +23,9 @@ export default function AboutCard() {
         }}
         style={{
           width: '100%',
-          height: '100%',
-          maxWidth: '600px',
-          maxHeight: '450px',
-          minWidth: '580px',
-          minHeight: '350px',
+          maxWidth: isMobile ? '80vw' : '600px',
+          minWidth: isMobile ? 'auto' : '580px',
+          minHeight: isMobile ? 'auto' : '350px',
           position: 'relative',
           background: 'rgba(255,255,255,0.12)',
           backdropFilter: 'blur(6px)',
@@ -35,7 +36,9 @@ export default function AboutCard() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          padding: '32px',
+
+          // Ajuste de espacio: más aire arriba en móvil para el título absoluto
+          padding: isMobile ? '65px 20px 25px 20px' : '32px',
           color: '#ffffff',
           overflow: 'hidden',
         }}
@@ -43,10 +46,10 @@ export default function AboutCard() {
         <h2
           style={{
             position: 'absolute',
-            top: '25px',
-            left: '32px',
+            top: isMobile ? '18px' : '25px',
+            left: isMobile ? '20px' : '32px',
             margin: 0,
-            fontSize: '22px',
+            fontSize: isMobile ? '18px' : '22px',
             fontWeight: 700,
             letterSpacing: '0.5px',
           }}
@@ -54,60 +57,53 @@ export default function AboutCard() {
           {t('about.title')}
         </h2>
 
-        {/* Texto */}
+        {/* Texto con tipografía fluida */}
         <div
           style={{
-            fontSize: 'clamp(14px, 1.2vw, 16px)',
+            fontSize: isMobile ? '14px' : '15px',
             lineHeight: 1.6,
             textAlign: 'left',
           }}
         >
-          {/* <p>
-            I’m a fullstack developer with a stronger focus on backend and
-            application architecture.
-          </p>
-
-          <p>
-            I have a background in Digital Design and Software Engineering,
-            which allows me to understand both system logic and user experience.
-          </p>
-
-          <p>
-            I focus on building scalable solutions, writing clean code, and
-            developing stable, well-structured applications.
-          </p> */}
-          <p>{t('about.part1')}</p>
-          <p>{t('about.part2')}</p>
+          <p style={{ marginBottom: '12px' }}>{t('about.part1')}</p>
+          <p style={{ marginBottom: '12px' }}>{t('about.part2')}</p>
           <p>{t('about.part3')}</p>
         </div>
 
-        {/* Stack */}
+        {/* Stack de Tecnologías */}
         <div
           style={{
             marginTop: '20px',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '8px',
+            gap: isMobile ? '8px' : '10px',
+            justifyContent: isMobile ? 'center' : 'flex-start',
           }}
         >
           {Object.entries(techIcons).map(([name, icon], index) => (
-            <div
+            <motion.div
               key={index}
+              whileHover={{ scale: 1.1 }} // Aprovechando las utilidades de motion
               style={{
-                padding: '6px 12px',
-                fontSize: '12px',
-                borderRadius: '20px',
-                background: 'rgba(255,255,255,0.08)',
-                backdropFilter: 'blur(4px)',
-                letterSpacing: '0.5px',
+                padding: '6px',
+                borderRadius: '12px',
+                background: 'rgba(255,255,255,0.05)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <img
                 src={icon}
                 alt={name}
-                style={{ width: '40px', height: '40px' }}
+                title={name}
+                style={{
+                  width: isMobile ? '30px' : '35px',
+                  height: isMobile ? '30px' : '35px',
+                  objectFit: 'contain',
+                }}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
