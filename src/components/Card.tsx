@@ -9,11 +9,8 @@ const Card = ({ children }: { children: ReactNode }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '60vw',
+        width: '100vw',
         height: '90vh',
-        marginLeft: '20%',
-        transform: 'translateX(-50%)',
-        position: 'relative',
       }
     : {
         display: 'flex',

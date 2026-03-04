@@ -23,10 +23,10 @@ export default function AboutCard() {
         }}
         style={{
           width: '100%',
-          maxWidth: isMobile ? '80vw' : '600px',
-          minWidth: isMobile ? 'auto' : '580px',
-          minHeight: isMobile ? 'auto' : '350px',
+          maxWidth: isMobile ? '80vw' : '700px',
+          height: isMobile ? '400px' : '250px',
           position: 'relative',
+          left: isMobile ? '-20%' : 0,
           background: 'rgba(255,255,255,0.12)',
           backdropFilter: 'blur(6px)',
           WebkitBackdropFilter: 'blur(6px)',
