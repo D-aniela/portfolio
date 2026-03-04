@@ -1,7 +1,10 @@
 'use client'
 
-import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
+import MobileNavbar from './MobileNavbar'
+import DesktopNavbar from './DesktopNavbar'
+import { useIsMobile } from '../hooks/useMobile'
 
 interface Props {
   items: { id: number; label: string }[]
@@ -19,105 +22,59 @@ const boxStyle = {
   fontFamily: 'sans-serif',
   fontWeight: 500,
   cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  whiteSpace: 'nowrap' as const,
 }
 
-export default function BubbleNavbar({ items, setItem }: Props) {
-  const { t, i18n } = useTranslation()
-  console.log(i18n.language)
+export default function BubbleNavbar({
+  items,
+  item: activeItem,
+  setItem,
+}: Props) {
+  const { i18n } = useTranslation()
+  const isMobile = useIsMobile(768)
+  const [isOpen, setIsOpen] = useState(false)
 
+  // Detectar el tamaño de la pantalla
+  const isMenuOpen = isMobile && isOpen
+
+  const handleSetOpen = (value: boolean) => {
+    setIsOpen(value)
+  }
+
+  const isEnglish = i18n.language.includes('en')
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(isEnglish ? 'es' : 'en')
+  }
+
+  // === RENDERIZADO PARA MÓVIL (HAMBURGUESA) ===
+  if (isMobile) {
+    return (
+      <MobileNavbar
+        boxStyle={boxStyle}
+        items={items}
+        item={activeItem}
+        setItem={setItem}
+        toggleLanguage={toggleLanguage}
+        isOpen={isMenuOpen}
+        setIsOpen={handleSetOpen}
+        isEnglish={isEnglish}
+      />
+    )
+  }
+
+  // === RENDERIZADO PARA ESCRITORIO (NORMAL) ===
   return (
-    <div
-      style={{
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '60px',
-        flexWrap: 'nowrap',
-        zIndex: 20,
-      }}
-    >
-      {items.map((item, i) => (
-        <motion.div
-          key={item.id}
-          initial={{ opacity: 0, y: -40, scale: 0.8 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            delay: i * 0.12,
-            type: 'spring',
-            stiffness: 260,
-            damping: 10,
-          }}
-          whileHover={{
-            y: -8,
-            scale: 1.1,
-            transition: { type: 'spring', stiffness: 300 },
-          }}
-          whileTap={{ scale: 0.95 }}
-          style={{
-            ...boxStyle,
-            padding: '12px 26px',
-            borderRadius: '999px',
-          }}
-          onClick={() => setItem(item.id)}
-        >
-          {t(item.label)}
-        </motion.div>
-      ))}
-      <div
-        style={{
-          ...boxStyle,
-          width: '90px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '12px 20px',
-        }}
-        onClick={() => {
-          if (i18n.language.includes('en')) {
-            i18n.changeLanguage('es')
-          } else {
-            i18n.changeLanguage('en')
-          }
-        }}
-      >
-        <img src='/svg/language.svg' alt='' width={20} />
-        {i18n.language.includes('en') ? (
-          <>
-            <span
-              style={{
-                textDecoration: 'underline',
-                cursor: 'pointer',
-              }}
-            >
-              EN
-            </span>
-            | <span>ES</span>
-          </>
-        ) : (
-          <>
-            <span
-              style={{
-                textDecoration: 'underline',
-                cursor: 'pointer',
-              }}
-            >
-              EN
-            </span>
-            |{' '}
-            <span
-              style={{
-                textDecoration: 'underline',
-                cursor: 'pointer',
-              }}
-            >
-              ES
-            </span>
-          </>
-        )}
-        {/* <span>EN</span> | <span>ES</span> */}
-      </div>
-    </div>
+    <DesktopNavbar
+      boxStyle={boxStyle}
+      items={items}
+      item={activeItem}
+      setItem={setItem}
+      toggleLanguage={toggleLanguage}
+      isEnglish={isEnglish}
+    />
   )
 }
