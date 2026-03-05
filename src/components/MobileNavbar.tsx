@@ -37,7 +37,6 @@ const MobileNavbar = ({
             position: 'fixed',
             top: '20px',
             left: '100px',
-            zIndex: 50,
             padding: '12px',
           }}
           onClick={() => setIsOpen(true)}
@@ -76,7 +75,6 @@ const MobileNavbar = ({
               height: '100vh',
               background: 'rgba(0, 0, 0, 0.6)',
               backdropFilter: 'blur(40px)',
-              zIndex: 100,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',

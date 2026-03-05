@@ -1,15 +1,12 @@
-'use client'
-
-import { motion } from 'motion/react' // Nueva forma de importar
 import { useTranslation } from 'react-i18next'
 import { useIsMobile } from '../hooks/useMobile'
-
 import Card from './Card'
-import { techIcons } from '../utils/helpers'
+import { motion } from 'motion/react'
+import { contactIcons } from '../utils/helpers'
 
-export default function AboutCard() {
-  const { t } = useTranslation()
+const Contact = () => {
   const isMobile = useIsMobile(768)
+  const { t } = useTranslation()
 
   return (
     <Card>
@@ -24,9 +21,9 @@ export default function AboutCard() {
         style={{
           width: '100%',
           maxWidth: isMobile ? '80vw' : '700px',
-          height: isMobile ? '450px' : '380px',
+          height: isMobile ? '400px' : '250px',
           position: 'relative',
-          left: isMobile ? '-20%' : 0,
+          left: isMobile ? '50%' : '50%',
           background: 'rgba(255,255,255,0.12)',
           backdropFilter: 'blur(6px)',
           WebkitBackdropFilter: 'blur(6px)',
@@ -54,56 +51,45 @@ export default function AboutCard() {
             letterSpacing: '0.5px',
           }}
         >
-          {t('about.title')}
+          {t('contact.title')}
         </h2>
 
-        {/* Texto con tipografía fluida */}
-        <div
-          style={{
-            fontSize: isMobile ? '14px' : '15px',
-            lineHeight: 1.6,
-            textAlign: 'left',
-          }}
-        >
-          <p style={{ marginBottom: '12px' }}>{t('about.part5')}</p>
-          <p style={{ marginBottom: '12px' }}>{t('about.part1')}</p>
-          <p style={{ marginBottom: '12px' }}>{t('about.part2')}</p>
-          <p>{t('about.part3')}</p>
-          <p>{t('about.part4')}</p>
-        </div>
-
-        {/* Stack de Tecnologías */}
         <div
           style={{
             marginTop: '20px',
             display: 'flex',
+            alignItems: 'center',
             flexWrap: 'wrap',
+            flexDirection: isMobile ? 'column' : 'row',
             gap: isMobile ? '8px' : '10px',
             justifyContent: isMobile ? 'center' : 'flex-start',
           }}
         >
-          {Object.entries(techIcons).map(([name, icon], index) => (
+          {Object.entries(contactIcons).map(([name, icon], index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.1 }} // Aprovechando las utilidades de motion
               style={{
                 padding: '6px',
                 borderRadius: '12px',
-                background: 'rgba(255,255,255,0.05)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
               }}
             >
               <img
-                src={icon}
+                src={icon.img}
                 alt={name}
                 title={name}
                 style={{
-                  width: isMobile ? '30px' : '35px',
-                  height: isMobile ? '30px' : '35px',
+                  width: isMobile ? '80px' : '211px',
+                  height: isMobile ? '80px' : '211px',
                   objectFit: 'contain',
+                  cursor: 'pointer',
+                  textDecoration: 'none',
+                  color: 'inherit',
                 }}
+                onClick={() => window.open(icon.link, '_blank')}
               />
             </motion.div>
           ))}
@@ -112,3 +98,5 @@ export default function AboutCard() {
     </Card>
   )
 }
+
+export default Contact

@@ -12,6 +12,18 @@ export const techIcons: Record<string, string> = {
   node: '/svg/icons/node.svg',
 }
 
+export const contactIcons: Record<string, { img: string; link: string }> = {
+  email: {
+    img: '/svg/icons/email.svg',
+    link: 'mailto:lauraestradaib@gmail.com',
+  },
+  github: { img: '/svg/icons/github.svg', link: 'https://github.com/D-aniela' },
+  linkedin: {
+    img: '/svg/icons/linkedin.svg',
+    link: 'https://www.linkedin.com/in/daniela-estrada-ibarra/',
+  },
+}
+
 export type NavItem = {
   id: number
   label: string

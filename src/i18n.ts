@@ -27,6 +27,8 @@ i18n
               'I have a background in Digital Design and Software Engineering, which allows me to understand both system logic and user experience.',
             part3:
               'I focus on building scalable solutions, writing clean code, and developing stable, well-structured applications.',
+            part4: `I'm full of curiosity, I enjoy deconstructing processes to learn, and I’m always ready for the next technological challenge.`,
+            part5: 'My name is Laura Estrada',
           },
           timeline: {
             text1:
@@ -52,6 +54,21 @@ i18n
             portfolio: 'Portfolio',
             contact: 'Contact',
           },
+          contact: {
+            title: 'Contact',
+          },
+          me: {
+            im: `I'm a`,
+            dev: 'developer',
+            stack: 'fullstack engineer',
+            digital: 'digital architect',
+            front: 'frontend developer',
+            prob: 'problem solver',
+            creative: 'creative coder',
+            explorer: 'tech explorer',
+            eternal: 'eternal learner',
+            software: 'software engineer',
+          },
         },
       },
       es: {
@@ -64,6 +81,9 @@ i18n
               'Cuento con formación en Diseño y Animación Digital e Ingeniería en Desarrollo de Software.',
             part3:
               'Me enfoco en construir soluciones escalables, mantener código limpio y desarrollar aplicaciones estables y bien estructuradas.',
+            part4:
+              'Estoy llena de curiosidad, disfruto desarmando procesos para aprender y siempre estoy lista para el siguiente reto tecnológico.',
+            part5: 'Mi nombre es Laura Estrada',
           },
           timeline: {
             text1:
@@ -88,6 +108,21 @@ i18n
             about: 'Acerca',
             portfolio: 'Portfolio',
             contact: 'Contacto',
+          },
+          contact: {
+            title: 'Contacto',
+          },
+          me: {
+            im: 'Soy una',
+            dev: 'desarrolladora',
+            stack: 'ingeniera fullstack',
+            digital: 'arquitecta digital',
+            front: 'desarrolladora frontend',
+            prob: 'solucionadora de problemas',
+            creative: 'programadora creativa',
+            explorer: 'exploradora tecnológica',
+            eternal: 'aprendiz eterna',
+            software: 'ingeniera de software',
           },
         },
       },

@@ -30,7 +30,6 @@ const DesktopNavbar = ({
         display: 'flex',
         alignItems: 'center',
         gap: '40px',
-        zIndex: 50,
       }}
     >
       <div style={{ display: 'flex', gap: '20px' }}>

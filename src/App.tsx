@@ -8,6 +8,8 @@ import BubbleNavbar from './components/Navbar'
 import AboutCard from './components/AboutCard'
 import TimelineScroll from './components/TimelineScroll'
 import { items } from './utils/helpers'
+import Contact from './components/Contact'
+import TypewriterEffect from './components/TypeWritterEffect'
 
 export default function App() {
   const { scrollYProgress } = useScroll()
@@ -70,9 +72,26 @@ export default function App() {
             <AnimatePresence>
               {item === 2 && <AboutCard key='about' />}
               {item === 3 && <TimelineScroll key='timeline' />}
+              {item === 4 && <Contact key='contact' />}
             </AnimatePresence>
           </div>
         </div>
+
+        {item !== 2 && item !== 3 && item !== 4 && (
+          <>
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 1,
+              }}
+            >
+              <TypewriterEffect />
+            </div>
+          </>
+        )}
 
         {/* Canvas con transparency */}
         <div
